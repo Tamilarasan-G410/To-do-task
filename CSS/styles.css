@@ -1,0 +1,466 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #413f64;
+  padding: 0%;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.whole {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading{
+  margin-top: 3%;
+}
+.title {
+  color: #413f64;
+}
+
+.container {
+  height: 17%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+}
+
+.container form {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container input {
+  height: 65%;
+  width: 33%;
+  font-size: 16px;
+  border: none;
+  padding-left: 1%;
+  background-color: #f0f4f8;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+  color: #413f64;
+}
+
+.container input:focus {
+  background-color: white;
+}
+
+.button {
+  border: none;
+  background-color: #413f64;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  height: 68%;
+  width: 4%;
+  padding: 10px;
+  font-size: 17px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.button:hover {
+  background-color: #2f2b61;
+}
+
+.error-message {
+  margin: 0%;
+  width: 36%;
+  height: 30%;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  color: red;
+  font-size: 13px;
+}
+
+.tasks {
+  padding: 1.5%;
+  padding-bottom: 0%;
+  height: 44%;
+  width: 35%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  padding-top: 0%;
+  scrollbar-color: #413f64 #EFE9D7;
+}
+nav {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  height: 4%;
+  align-items: center;
+  accent-color: #413f64;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  margin-bottom: 2%;
+  width: 38%;
+}
+
+nav input[type="radio"] {
+  display: none;
+}
+
+nav label {
+  border: none;
+  background: none;
+  font-size: 19px;
+  color: #413f64;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 33.33%;
+  cursor: pointer;
+}
+
+nav .animation {
+  position: absolute;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  background: #413f64;
+  border-radius: 20px;
+  transition: all 0.5s ease 0s;
+  width: 33.33%;
+}
+nav input[type="radio"]:checked + label {
+  color: white;
+}
+nav input#all:checked ~ .animation {
+  left: 0;
+}
+
+nav input#assigned:checked ~ .animation {
+  left: 33.33%;
+}
+
+nav input#completed:checked ~ .animation {
+  left: 66.66%;
+}
+
+.showtasks {
+  margin-top: 2%;
+  height: 90%;
+  overflow: auto;
+}
+
+.showtasks1 {
+  height: 19%;
+  padding: 0%;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taskname {
+  height: 35%;
+  width: 75%;
+  padding: 0.5%;
+  padding-top: 1%;
+  padding-left: 2%;
+  margin-left: 1%;
+  border-radius: 30px;
+  font-size: 16px;
+  background-color: aliceblue;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: default;
+}
+
+.taskname.error {
+  border-color: red;
+  color: red;
+}
+
+.taskname.error::placeholder {
+  color: red;
+}
+
+.buttons {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.checkbtn,
+.deletebtn,
+.editbtn {
+  border: none;
+  background-color: #413f64;
+  cursor: pointer;
+  font-size: 19px;
+  cursor: pointer;
+  width: 24%;
+  border-radius: 23px;
+  margin: 0 5px;
+}
+
+.checkbtni,
+.deletebtni,
+.editbtni {
+  width: 54%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.editbtn:hover {
+  background-color: #2f2b61;
+}
+
+.checkbtn:hover {
+  background-color: #2f2b61;
+}
+
+.deletebtn:hover {
+  background-color: #2f2b61;
+}
+
+.finalbutton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 38%;
+  padding-top: 1%;
+}
+
+.delete-all {
+  border: none;
+  background-color: #413f64;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 23px;
+  padding: 10px;
+}
+
+.delete-all:hover {
+  background-color: #2f2b61;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #413f64;
+}
+
+.toast {
+  position: fixed;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #413f64;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none; 
+  z-index: 1000;
+}
+.toast button {
+  background-color: white;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ynbutton{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.toast button:hover {
+  background-color: rgb(235, 230, 230);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  z-index: 999; 
+  display: none; 
+}
+@media screen and (max-width: 425px) {
+  nav {
+    width: 88%;
+  }
+
+  .finalbutton {
+    width: 90%;
+  }
+
+  .error-message {
+    width: 68%;
+  }
+
+  nav label {
+    font-size: 18px;
+  }
+
+  .container input {
+    width: 50%;
+    padding-left: 5%;
+  }
+
+  .button {
+    width: 23%;
+  }
+
+  .buttons {
+    width: 50%;
+    padding-left: 2%;
+  }
+
+  .button1 {
+    font-size: 13px;
+    width: 30%;
+    margin: 1%;
+    padding: 2%;
+  }
+
+  .taskname {
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .tasks {
+    width: 90%;
+  }
+
+  .checkbtni,
+  .deletebtni,
+  .editbtni {
+    width: 75%;
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  nav {
+    width: 60%;
+  }
+
+  .finalbutton {
+    width: 60%;
+  }
+
+  .error-message {
+    width: 55%;
+  }
+  nav label {
+    font-size: 18px;
+  }
+
+  .button {
+    width: 12%;
+  }
+
+  .buttons {
+    width: 40%;
+    padding-left: 2%;
+  }
+
+  .button1 {
+    width: 30%;
+  }
+
+  .taskname {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .checkbtni,
+  .deletebtni,
+  .editbtni {
+    width: 60%;
+    object-fit: contain;
+  }
+  .tasks{
+    width:58%;
+  }
+  .container input{
+    width:46%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1123px) {
+  nav {
+    width: 37%;
+  }
+  nav label {
+    font-size: 21px;
+  }
+
+  .button {
+    width: 7%;
+  }
+
+  .buttons {
+    width: 45%;
+    padding-left: 2%;
+  }
+
+  .button1 {
+    width: 23%;
+  }
+
+  .taskname {
+    width: 72%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .checkbtni,
+  .deletebtni,
+  .editbtni {
+    width: 85%;
+    object-fit: contain;
+  }
+  .checkbtn,
+  .deletebtn,
+  .editbtn {
+  width: 24%;
+  
+}
+}

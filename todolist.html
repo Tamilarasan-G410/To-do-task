@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\styles.css" />
+    <link rel="icon" type="image/x-icon" href="images\check-list.png">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="whole">
+            <div class="heading">
+                <h1 class="title">To-Do List</h1>
+            </div>    
+            <div class="container">
+                <form id="form">
+                <input type="text" id="inputtask" maxlength="150" placeholder="Enter the task" autocomplete="off">
+                <button class="button" type="submit" title="Add the task">Add</button>
+                </form>
+                <div class="error-message"></div>
+            </div>
+            <nav>
+                <input type="radio" name="taskFilter" id="all" value="All" checked>
+                <label for="all">All</label>
+                <input type="radio" name="taskFilter" id="assigned" value="Assigned">
+                <label for="assigned">Assigned</label>
+                <input type="radio" name="taskFilter" id="completed" value="Completed">
+                <label for="completed">Completed</label>
+                <div class="animation"></div>
+            </nav>
+            <div class="tasks">
+                <div class="showtasks">
+                    <div class="message-container">
+                        <p class="no-tasks-message" style="display: none;">No tasks available.</p>
+                        <p class="no-completed-tasks-message" style="display: none;">No completed tasks.</p>
+                        <p class="no-assigned-tasks-message" style="display: none;">No assigned tasks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="finalbutton">
+                <button class="delete-all" title="Delete all the tasks">Delete all Tasks</button>
+            </div>
+                <div id="toast" class="toast">
+                    <p id="toast-message"></p>
+                    <div class="ynbutton">
+                        <button id="toast-confirm">Yes</button>
+                        <button id="toast-cancel">No</button>
+                    </div>
+                </div>
+                <div class="overlay"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
